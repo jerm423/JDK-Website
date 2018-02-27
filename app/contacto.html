@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Misión y Visión</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Style Sheets -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="all" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="css/main.min.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="css/jquery-ui.min" />
+    <style>
+      #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+    <div class="site-container">
+      <div class="site-pusher">
+        <header class="header">
+          <div class="logoContainer">
+            <a href="index.html" class="header__logo">
+              <img src="img/jdk.png" class="jdkLogo">
+            </a>
+            <div class="headerInfoContainer">
+              <div class="headerInfoWrapper">
+                <img src="svg/phone.svg">
+                <div class="headerTextWrapper">
+                  <p class="title">Contáctenos</p>
+                  <p class="content">+506 2222-2222</p>
+                </div>
+              </div>
+              <div class="headerInfoWrapper">
+                <img src="svg/clock.svg">
+                <div class="headerTextWrapper">
+                  <p class="title">Horarios de Atención</p>
+                  <p class="content">Lun - Vie, 8am a 5pm</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <nav class="menu">
+            <ul>
+              <li><a href="index.html">Inicio</a></li>
+              <li>
+                <a href="#" class="secondLevelMenu">¿Quiénes Somos?</a>
+                <ul>
+                  <li><a href="quienesSomos.html">Acerca de Nosotros</a></li>
+                  <li><a href="mision-vision.html">Misión y Visión</a></li>
+                </ul>
+              </li>
+              <li><a href="juntas.html">Juntas</a></li>
+              <li><a href="empresas.html">Empresas</a></li>
+              <li><a href="contacto.html" class="active">Contacto</a></li>
+            </ul>
+          </nav>
+          <div class="toggleContainer">
+            <a href="#" class="header__icon" id="header__icon"></a>
+          </div>
+        </header>
+        <article class="site-content ">
+          <main>
+            <div id="map"></div>
+
+            <form class="ui form" id="contactForm">
+              <div class="fieldsWrapper">
+                <div class="field">
+                  <label>Nombre</label>
+                  <input type="text" id="first-name" name="first-name" required>
+                </div>
+                <div class="field">
+                  <label>Apellidos</label>
+                  <input type="text" id="last-name" name="last-name" required>
+                </div>
+                <div class="field">
+                  <label>Número de Teléfono</label>
+                  <input type="tel" pattern="\d{4}[\-]\d{4}" placeholder="8888-8888" id="phone-number" name="phone-number" required>
+                </div>
+                <div class="field">
+                  <label>Correo Electrónico</label>
+                  <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="ejemplo@ejemplo.com" id="email" name="email" required>
+                </div>
+                <div class="field">
+                  <label>Mensaje</label>
+                  <textarea id="message" class="form-control" rows="5" required></textarea>
+                </div>
+                <button class="btn btn-primary" type="submit" name="submit">Enviar</button>
+              </div>
+            </form>
+          </main>
+        </article>
+        <div class="site-cache" id="site-cache"></div>
+      </div>
+    </div>
+    <footer>
+      <div class="footerWrapper">
+        <p>Teléfono: <a href="tel:+50622222222">(506) 2222 - 2222</a></p>
+        <p>Correo Electrónico: <a href="mailto:info@jdkconsultores.com">info@jdkconsultores.com</a></p>
+        <p>JDK Consultores del Este S.A. - Todos los derechos reservados 2017</p>
+      </div>
+    </footer>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="js/jquery-ui.min"></script>
+  <script src="js/menuShutter.js"></script>
+  <script src="js/form-scripts.js"></script>
+  <script>
+    function initMap() {
+      var uluru = {lat: 9.983275, lng: -84.004084};
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 15,
+        center: uluru
+      });
+      var marker = new google.maps.Marker({
+        position: uluru,
+        map: map
+      });
+    }
+  </script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoEqN0REQT2PofS-y6g0194dmWCmQwnYc&callback=initMap&q=9.983275,-84.004084">
+    </script>
+</html>

@@ -27,37 +27,46 @@ footer {
 /* MENU STYLES*/
 
 .logoContainer {
-    height: 82px;
+    height: 100px;
 
     .header__logo {
         .jdkLogo {
-            width: 130px;
+            width: 170px;
             margin: 10px;
         }
     }
 
     .headerInfoContainer {
         float: right;
-        margin-top: 15px;
+        margin-top: 30px;
+        width: 420px;
         display: none;
 
         .headerInfoWrapper {
             display: inline-block;
             margin-left: 20px;
 
+            &:first-child{
+                width: 155px;
+            }
+
             img {
                 display: inline-block;
                 vertical-align: middle;
+                width: 35px;
             }
 
             .headerTextWrapper {
                 vertical-align: middle;
                 display: inline-block;
 
-                .title {}
+                .title {
+                    font-size: 15px;
+                }
 
                 .content {
                     font-weight: bold;
+                    font-size: 15px;
                 }
             }
         }
@@ -172,6 +181,16 @@ footer {
         width: auto;
         -webkit-transform: translateX(0px);
         transform: translateX(0px);
+
+        .menuLeft{
+            float: left;
+            //padding-top: 5px;
+        }
+
+        .menuRight{
+            float: right;
+            padding-top: 5px;
+        }
 
         ul {
             border-left: none;
